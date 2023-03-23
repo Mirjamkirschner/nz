@@ -9,6 +9,10 @@ body {
     margin: auto;
 }
 
+body {
+    background-color: #f0f8ff;
+}
+
 header>img {
     max-width: 100%;
 }
