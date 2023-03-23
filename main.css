@@ -98,3 +98,7 @@ a {
 .abgesetztlinks {
     padding-left: 1em;
 }
+
+figcaption{
+    font-size:smaller;
+}
