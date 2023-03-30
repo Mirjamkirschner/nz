@@ -3,6 +3,12 @@ let stop_lng = 170.826061;
 let zoom = 13;
 let title = 'Moeraki Boulders'
 
+const STOPS = ["Lake Tekapo", "Moeraki Boulders", "Milford Sound"];
+console.log(STOPS);
+console.log(STOPS[0]);
+console.log(STOPS[1]);
+console.log(STOPS[2]);
+console.log(STOPS.length);
 
 let map = L.map('map').setView([stop_lat, stop_lng], zoom);
 
