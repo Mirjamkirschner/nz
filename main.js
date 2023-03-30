@@ -88,18 +88,30 @@ const STOPS = [
 
 let map = L.map('map').setView([stop_lat, stop_lng], zoom);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+let osm = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
+
+let watercolor = L.tileLayer.provider('Stamen.Watercolor').addTo(map);
+
+L.control.layers({
+"Openstreetmap": osm,
+"Watercolor": watercolor
 }).addTo(map);
 
-    for (let stop of STOPS) {
-        //Marker für den Stop  
-        let marker = L.marker([stop.lat, stop.lng])
+L.control.scale({
+    imperial: false,
+    position: "bottomright"
+}).addTo(map);
+
+for (let stop of STOPS) {
+    //Marker für den Stop  
+    let marker = L.marker([stop.lat, stop.lng], {
+        opacity: 0.5
+    })
         .addTo(map)
         .bindPopup(`<h3>${stop.title}</h3>
         <a href="${stop.wikipedia}">Wikipedia</a>
         `);
-        if (stop.user == "Mirjamkirschner") {
-            marker.openPopup();
-        }
+    if (stop.user == "Mirjamkirschner") {
+        marker.openPopup();
     }
+}
