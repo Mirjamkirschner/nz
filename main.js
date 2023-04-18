@@ -102,6 +102,13 @@ L.control.scale({
     position: "bottomleft"
 }).addTo(map);
 
+var map = new L.Map('map', {
+    fullscreenControl: true,
+    fullscreenControlOptions: {
+      position: 'topleft'
+    }
+  });
+
 for (let stop of STOPS) {
     //Marker für den Stop  
     let marker = L.marker([stop.lat, stop.lng], {
