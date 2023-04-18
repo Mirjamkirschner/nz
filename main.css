@@ -101,4 +101,13 @@ a {
 
 figcaption{
     font-size:smaller;
+    padding-left: 1em;
+    padding-bottom: 0.3em;
 }
+
+var map = new L.Map('map', {
+    fullscreenControl: true,
+    fullscreenControlOptions: {
+      position: 'topleft'
+    }
+  });

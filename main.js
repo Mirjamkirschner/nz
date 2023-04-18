@@ -93,19 +93,19 @@ let osm = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 let watercolor = L.tileLayer.provider('Stamen.Watercolor').addTo(map);
 
 L.control.layers({
-"Openstreetmap": osm,
-"Watercolor": watercolor
+    "Openstreetmap": osm,
+    "Watercolor": watercolor
 }).addTo(map);
 
 L.control.scale({
     imperial: false,
-    position: "bottomright"
+    position: "bottomleft"
 }).addTo(map);
 
 for (let stop of STOPS) {
     //Marker für den Stop  
     let marker = L.marker([stop.lat, stop.lng], {
-        opacity: 0.5
+        opacity: 1
     })
         .addTo(map)
         .bindPopup(`<h3>${stop.title}</h3>
