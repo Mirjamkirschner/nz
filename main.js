@@ -102,6 +102,12 @@ L.control.scale({
     position: "bottomleft"
 }).addTo(map);
 
+map.addControl(new L.Control.Fullscreen({
+    title: {
+        'false': 'View Fullscreen',
+        'true': 'Exit Fullscreen'
+    }
+}));
 
 for (let stop of STOPS) {
     //Marker für den Stop  
@@ -116,3 +122,4 @@ for (let stop of STOPS) {
         marker.openPopup();
     }
 }
+
